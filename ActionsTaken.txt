@@ -1,6 +1,11 @@
 Action Taken
+ - npm install
+ - ng add @angular/material     Installs 3rd controls
+ - npm install bootstrap font-awesome
 
 
 
 Actions TBD
 - When GIT repository is private I was unable to use username/password.  Feature was removed on Aug 21, 2023
+- I tried to change the port the web server runs on from 4200 to 5200 but I was unsuccessful
+- I picked the wrong region East US 2; pick East US moving forward

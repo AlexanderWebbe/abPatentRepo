@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+
+    <!-- {{termDefinitions}} -->
+
+    <form class="termDefinition-form" #myTermDefinitionsForm="ngForm" (ngSubmit)="processTermDefinitions()">
+        <mat-form-field class="termDefintions-full-width">
+            <mat-label>Term Definitions</mat-label>
+            <textarea name="termDefinitions" #myTermDefinitions="ngModel" [(ngModel)]="termDefinitions" matInput placeholder="Review Term Definitions" required></textarea>
+            <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions is required</em>
+        </mat-form-field>
+
+        <div class="row">
+            <div class="col-md-1">
+                <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()" (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
+            </div>
+            <div class="col-md-11">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext [disabled]="myTermDefinitionsForm.form.invalid" >Next</button>
+            </div>
+        </div>  
+
+        <div class="termDefinitionsError" *ngIf="termDefinitionsError">
+            {{termDefinitionsErrorMessage}}
+        </div>
+
+    </form>
+
+</div>

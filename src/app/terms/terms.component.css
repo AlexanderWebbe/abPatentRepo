@@ -1,0 +1,26 @@
+.terms-full-width {
+  width: 100%;
+} 
+
+.termsError {
+    margin: 25px 0;
+    color: red;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  em.error {
+    padding: 2px 5px;
+    background-color: #c2185b;
+    color: white;
+    font-style: normal;
+  }
+
+  button{
+    margin: 10px 5px;;    
+  }
+
+  textarea.mat-input-element {
+    min-height: 350px;
+    background-color: lightgray;
+  }
