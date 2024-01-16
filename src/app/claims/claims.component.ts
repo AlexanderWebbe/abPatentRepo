@@ -60,6 +60,12 @@ export class ClaimsComponent {
         // Provide an output to be provided to the next step
 
         console.log(`Process Claims: ${this.claims}`);
+
+        this.http.post('/api/Claims', { rawInput: this.claims}).subscribe(data => {
+            console.log(`POSTED Claims: ${this.claims}`);
+            console.log(`POSTED Claims Response: ${data}`);
+        })
+
     }
 
     previousDraftOnClick() {

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
               <h1>{{pageTitle}}</h1>
               <!-- <ab-history></ab-history> -->
               <hr/>
-              <h1>Patent Form</h1>
+              <h1>Patent Draft Form</h1>
               <mat-stepper orientation="vertical" [linear]="true">
                 <mat-step label="Fill out your claims">
                   <ab-claims></ab-claims>
@@ -21,5 +21,5 @@ import { Component } from '@angular/core';
             </div>`,
 })
 export class AppComponent {
-  pageTitle = 'Alston & Bird - Patent Copilot';
+  pageTitle = 'Alston & Bird - Draft (Patent Copilot)';
 }
