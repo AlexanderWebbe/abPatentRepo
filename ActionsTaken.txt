@@ -2,6 +2,7 @@ Action Taken
  - npm install
  - ng add @angular/material     Installs 3rd controls
  - npm install bootstrap font-awesome
+ - After adding Azure Function App; open with visual studio and add Nuget package.  Install-Package Microsoft.SemanticKernel -Version 1.0.1
 
 
 
