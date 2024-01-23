@@ -3,7 +3,7 @@ import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
 import { ITermsResponse } from "../models/termsResponse.model";
-import { ITerms } from "../models/terms.model";
+import { ITerm } from "../models/term.model";
 
 @Component({
     selector: 'ab-terms',
@@ -12,7 +12,7 @@ import { ITerms } from "../models/terms.model";
 })
 export class TermsComponent {
     pageTitle: string = "Terms";
-    @Input() terms: ITerms;
+    @Input() terms: Array<ITerm>;
     termsError: boolean = false;
     termsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 
