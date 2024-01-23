@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IDraft } from './models/draft.model';
+import { IClaimsResponse } from './models/claimsResponse.model';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,7 @@ import { IDraft } from './models/draft.model';
             `,
 })
 export class AppComponent implements OnInit {
-  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-23 11:18 AM]';
+  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-23 2:01 PM]';
   //TODO: Create a object that contains user claims, open ai/user terms and open ai/user term definitions.  This will allow me to push data between
   //  components and have a summary display screen
   // Parent to child binds on data
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
       openAIOverview: 'Empty Open AI Overview',
       openAITermDefinitions: 'Empty Open AI Term Definitions',
       openAITerms: '',
-      userClaims: 'Empty user claims',
+      userClaims: '',
       userOverview: 'Empty user overview',
       userTermDefinitions: 'Empty user term definitions',
       userTerms: ''
@@ -58,10 +59,11 @@ export class AppComponent implements OnInit {
     //Initialize draft object
   }
 
-  addTermToDraft(openAITerms: string) {
-    console.log(`Add to Draft Object: ${openAITerms}`);
-    this.draft.openAITerms = openAITerms;
-    this.draft.userTerms = openAITerms;
+  addTermToDraft(claimsResponse: IClaimsResponse) {
+    console.log(`Add to Draft Object: ${claimsResponse.openAIResponse}`);
+    this.draft.userClaims = claimsResponse.rawInput;
+    //this.draft.openAITerms = claimsResponse.openAIResponse;
+    //this.draft.userTerms = claimsResponse.openAIResponse;
   }
 
   addTermDefinitionToDraft(openAITermDefinitions: string) {

@@ -68,7 +68,7 @@ export class ClaimsComponent {
             console.log(`POSTED Claims: ${this.claims}`);
             console.log(`POSTED RESPONSE Terms: ${data.openAIResponse}`);
 
-            this.getOpenAITerms.emit(data.openAIResponse);
+            this.getOpenAITerms.emit(data);
         });
 
     }

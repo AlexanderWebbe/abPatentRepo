@@ -1,5 +1,9 @@
 export interface IClaimsResponse
 {
     rawInput: string;
-    openAIResponse: string;
+    openAIResponse: [ITerm];
+}
+
+export interface ITerm {
+    term: string;
 }
