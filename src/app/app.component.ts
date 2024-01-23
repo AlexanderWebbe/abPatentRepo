@@ -13,10 +13,10 @@ import { IDraft } from './models/draft.model';
                   <ab-claims [claims]="draft.userClaims" (getOpenAITerms)="addTermToDraft($event)"></ab-claims>
                 </mat-step>
                 <mat-step label="Review your claim terms">
-                  <ab-terms [terms]="draft.userTerms"] (getOpenAITermDefinitions)="addTermDefinitionToDraft($event)")></ab-terms>
+                  <ab-terms [terms]="draft.userTerms" (getOpenAITermDefinitions)="addTermDefinitionToDraft($event)"></ab-terms>
                 </mat-step>
                 <mat-step label="Review your claim term definitions">
-                  <ab-termDefinitions [termDefinitions]="draft.userTermDefinitions"]></ab-termDefinitions>
+                  <ab-termDefinitions [termDefinitions]="draft.userTermDefinitions"></ab-termDefinitions>
                 </mat-step>
               </mat-stepper>
             </div>
@@ -33,7 +33,7 @@ import { IDraft } from './models/draft.model';
             `,
 })
 export class AppComponent implements OnInit {
-  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-22]';
+  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-23 11:18 AM]';
   //TODO: Create a object that contains user claims, open ai/user terms and open ai/user term definitions.  This will allow me to push data between
   //  components and have a summary display screen
   // Parent to child binds on data
