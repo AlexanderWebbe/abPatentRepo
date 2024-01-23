@@ -25,8 +25,8 @@ import { ITerm } from "./models/term.model";
             <hr/>
             User Claims:  {{draft.userClaims}}
             <hr/>
-            Open AI Terms: # {{draft.openAITerms.terms.length}}
-            <li *ngFor="let term of draft.userTerms.terms">
+            Open AI Terms: # {{draft.openAITerms?.terms.length}}
+            <li *ngFor="let term of draft.userTerms?.terms">
               {{term}}
             </li>
             <hr/>
