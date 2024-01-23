@@ -10,22 +10,26 @@ import { IDraft } from './models/draft.model';
               <h1>Patent Draft Form</h1>
               <mat-stepper orientation="vertical" [linear]="true">
                 <mat-step label="Fill out your claims">
-                  <ab-claims [claims]="draft.userClaims" (getOpenAITerms)="addToDraft($event)"></ab-claims>
+                  <ab-claims [claims]="draft.userClaims" (getOpenAITerms)="addTermToDraft($event)"></ab-claims>
                 </mat-step>
                 <mat-step label="Review your claim terms">
-                  <ab-terms></ab-terms>
+                  <ab-terms [terms]="draft.userTerms"] (getOpenAITermDefinitions)="addTermDefinitionToDraft($event)")></ab-terms>
                 </mat-step>
                 <mat-step label="Review your claim term definitions">
-                  <ab-termDefinitions></ab-termDefinitions>
+                  <ab-termDefinitions [termDefinitions]="draft.userTermDefinitions"]></ab-termDefinitions>
                 </mat-step>
               </mat-stepper>
             </div>
             <hr/>
-            {{draft.userClaims}}
+            User Claims:  {{draft.userClaims}}
             <hr/>
-            {{draft.openAITerms}}
+            Open AI Terms: {{draft.openAITerms}}
             <hr/>
-            {{draft.userTerms}}
+            User Terms: {{draft.userTerms}}
+            <hr/>
+            Open AI Term Definitions: {{draft.openAITermDefinitions}}
+            <hr/>
+            User Term Definitions: {{draft.userTermDefinitions}}
             `,
 })
 export class AppComponent implements OnInit {
@@ -42,11 +46,11 @@ export class AppComponent implements OnInit {
       date: '2024-01-22',
       openAIOverview: 'Empty Open AI Overview',
       openAITermDefinitions: 'Empty Open AI Term Definitions',
-      openAITerms: 'Empty Open AI Term',
+      openAITerms: '',
       userClaims: 'Empty user claims',
       userOverview: 'Empty user overview',
       userTermDefinitions: 'Empty user term definitions',
-      userTerms: 'Empty user terms'
+      userTerms: ''
     }
   }
 
@@ -54,10 +58,16 @@ export class AppComponent implements OnInit {
     //Initialize draft object
   }
 
-  addToDraft(openAITerms: string) {
+  addTermToDraft(openAITerms: string) {
     console.log(`Add to Draft Object: ${openAITerms}`);
     this.draft.openAITerms = openAITerms;
     this.draft.userTerms = openAITerms;
+  }
+
+  addTermDefinitionToDraft(openAITermDefinitions: string) {
+    console.log(`Add to Draft Object: ${openAITermDefinitions}`);
+    this.draft.openAITermDefinitions = openAITermDefinitions;
+    this.draft.userTermDefinitions = openAITermDefinitions;
   }
 
 }
