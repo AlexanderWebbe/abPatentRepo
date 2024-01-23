@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IDraft } from './models/draft.model';
 import { IClaimsResponse } from './models/claimsResponse.model';
+import { ITerm } from "./models/term.model";
 
 @Component({
   selector: 'app-root',
@@ -47,11 +48,11 @@ export class AppComponent implements OnInit {
       date: '2024-01-22',
       openAIOverview: 'Empty Open AI Overview',
       openAITermDefinitions: 'Empty Open AI Term Definitions',
-      openAITerms: '',
+      openAITerms: [],
       userClaims: '',
       userOverview: 'Empty user overview',
       userTermDefinitions: 'Empty user term definitions',
-      userTerms: ''
+      userTerms: []
     }
   }
 
@@ -62,8 +63,8 @@ export class AppComponent implements OnInit {
   addTermToDraft(claimsResponse: IClaimsResponse) {
     console.log(`Add to Draft Object: ${claimsResponse.openAIResponse}`);
     this.draft.userClaims = claimsResponse.rawInput;
-    //this.draft.openAITerms = claimsResponse.openAIResponse;
-    //this.draft.userTerms = claimsResponse.openAIResponse;
+    this.draft.openAITerms = claimsResponse.openAIResponse;
+    this.draft.userTerms = claimsResponse.openAIResponse;
   }
 
   addTermDefinitionToDraft(openAITermDefinitions: string) {
