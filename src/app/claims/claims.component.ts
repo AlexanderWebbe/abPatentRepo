@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
-import {Clipboard} from '@angular/cdk/clipboard';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Clipboard } from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
+import { IClaimsResponse } from "../models/claimsResponse.model";
 
 @Component({
     selector: 'ab-claims',
@@ -10,7 +11,7 @@ import { throwError } from "rxjs";
 })
 export class ClaimsComponent {
     pageTitle: string = "Claims";
-    claims: string = '';
+    @Input() claims: string;
     claimsError: boolean = false;
     claimsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 
@@ -18,6 +19,8 @@ export class ClaimsComponent {
     fileName = '';
     uploadProgress:number;
     // uploadSub: Subscription;
+
+    @Output() getOpenAITerms = new EventEmitter();
 
     constructor(private clipboard: Clipboard, private http: HttpClient) {}
 
@@ -61,23 +64,29 @@ export class ClaimsComponent {
 
         console.log(`Process Claims: ${this.claims}`);
 
-        this.http.post('/api/Claims', { rawInput: this.claims}).subscribe(data => {
+        this.http.post('/api/Claims', { rawInput: this.claims}).subscribe((data: IClaimsResponse) => {
             console.log(`POSTED Claims: ${this.claims}`);
-            console.log(`POSTED Claims Response: ${data}`);
-        })
+            console.log(`POSTED RESPONSE Terms: ${data.openAIResponse}`);
+
+            this.getOpenAITerms.emit(data.openAIResponse);
+        });
 
     }
 
     previousDraftOnClick() {
-        console.log('Previous Draft');
+        console.log('TODO:  Previous Draft');
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
     nextDraftOnClick() {
-        console.log("Next Draft");
+        console.log("TODO:  Next Draft");
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
     copyDraftOnClick() {
-        console.log("Copy Draft");
+        console.log("Copy Draft to clipboard");
+
+        // Copying large amounts of data can take time and requires async method
         // this.clipboard.copy(this.claims);
 
         const pending = this.clipboard.beginCopy(this.claims);
@@ -95,7 +104,8 @@ export class ClaimsComponent {
     }
 
     refreshDraftOnClick() {
-        console.log("Refresh Draft");
+        console.log("TODO:  Refresh Draft");
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
 }

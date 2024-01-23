@@ -8,29 +8,31 @@
 
     <form class="claim-form" #myClaimsForm="ngForm" (ngSubmit)="processClaims()">
 
-<!--         <div class="claim-full-width">
-            <mat-label>Upload Claims</mat-label>
-            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
-             <div *ngIf="file">
-                <section class="file-info">
-                  File details:
-                  <ul>
-                    <li>Name: {{file.name}}</li>
-                    <li>Type: {{file.type}}</li>
-                    <li>Size: {{file.size}} bytes</li>
-                  </ul>
-                </section>
+        <!--         
+        <div class="claim-full-width">
+                <mat-label>Upload Claims</mat-label>
+                <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+                <div *ngIf="file">
+                    <section class="file-info">
+                    File details:
+                    <ul>
+                        <li>Name: {{file.name}}</li>
+                        <li>Type: {{file.type}}</li>
+                        <li>Size: {{file.size}} bytes</li>
+                    </ul>
+                    </section>
+                </div>
             </div>
-        </div>
 
-        <hr/>
-        OR
-        <hr/>
- -->
+            <hr/>
+            OR
+            <hr/>
+        -->
+
         <div class="claim-full-width">
             <label>Claims</label>
             <textarea name="claims" #myClaims="ngModel" [(ngModel)] = "claims" matInput placeholder="Cut/Paste your claims here" required></textarea>
-            <em class="error" *ngIf="myClaims.invalid && myClaims.touched">Claims is required</em>
+            <em class="error" *ngIf="myClaims.invalid && myClaims.touched">Claims are required</em>
         </div>
         
         <div class="row">

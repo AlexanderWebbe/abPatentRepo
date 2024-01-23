@@ -9,7 +9,7 @@
         <mat-form-field class="terms-full-width">
             <mat-label>Terms</mat-label>
             <textarea name="terms" matInput #myTerms="ngModel" [(ngModel)]="terms" [(ngModel)] = "terms" placeholder="Review Terms" required></textarea>
-            <em class="error" *ngIf="myTerms.invalid && myTerms.touched">Terms is required</em>
+            <em class="error" *ngIf="myTerms.invalid && myTerms.touched">Terms are required</em>
         </mat-form-field>
         
         <div class="row">

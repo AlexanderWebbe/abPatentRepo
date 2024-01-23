@@ -7,6 +7,7 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from "@angular/material/stepper";
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
@@ -20,7 +21,7 @@ import { TermDefinitionsComponent } from "./termDefinitions/termDefinitions.comp
 
 @NgModule({
   declarations: [AppComponent, ActionsComponent, HistoryListComponent, ClaimsComponent, TermsComponent, TermDefinitionsComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, ClipboardModule, FormsModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatStepperModule ],  
+  imports: [BrowserModule, BrowserAnimationsModule, ClipboardModule, FormsModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatStepperModule, MatTooltipModule ],  
   bootstrap: [AppComponent]
 })
 export class AppModule {}

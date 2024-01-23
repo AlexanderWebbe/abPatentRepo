@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
+import { HttpClient } from "@angular/common/http";
+import { throwError } from "rxjs";
 
 @Component({
     selector: 'ab-terms',
@@ -12,7 +14,7 @@ export class TermsComponent {
     termsError: boolean = false;
     termsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 
-    constructor(private clipboard: Clipboard) {}
+    constructor(private clipboard: Clipboard, private http: HttpClient) {}
 
     processTerms() {
 
@@ -24,19 +26,31 @@ export class TermsComponent {
 
         console.log(`Process Terms: ${this.terms}`);
 
+        this.http.post('/api/Terms', { rawInput: this.terms}).subscribe(data => {
+            console.log(`POSTED Terms: ${this.terms}`);
+            console.log(`POSTED Terms Response: ${data}`);
+
+            // TODO:  Populate patent claim term definitions field
+            
+        })
+
     }
 
     previousDraftOnClick() {
-        console.log('Previous Draft');
+        console.log('TODO:  Previous Draft');
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
     nextDraftOnClick() {
-        console.log("Next Draft");
+        console.log("TODO:  Next Draft");
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
     copyDraftOnClick() {
         console.log("Copy Draft");
-        // this.clipboard.copy(this.claims);
+
+        // Copying large amounts of data can take time and requires async method
+        // this.clipboard.copy(this.terms);
 
         const pending = this.clipboard.beginCopy(this.terms);
         let remainingAttempts = 3;
@@ -53,7 +67,8 @@ export class TermsComponent {
     }
 
     refreshDraftOnClick() {
-        console.log("Refresh Draft");
+        console.log("TODO:  Refresh Draft");
+        console.log('TODO:  Azure SQL Storage is required to flip between drafts');
     }
 
 }
