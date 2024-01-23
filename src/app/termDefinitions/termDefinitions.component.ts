@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
@@ -10,7 +10,7 @@ import { throwError } from "rxjs";
 })
 export class TermDefinitionsComponent {
     pageTitle: string = "Term Definitions";
-    termDefinitions: string = '';
+    @Input() termDefinitions;
     termDefinitionsError: boolean = false;
     termDefinitionsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 

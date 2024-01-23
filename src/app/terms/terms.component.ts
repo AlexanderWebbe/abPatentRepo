@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
+import { ITermsResponse } from "../models/termsResponse.model";
 
 @Component({
     selector: 'ab-terms',
@@ -10,9 +11,11 @@ import { throwError } from "rxjs";
 })
 export class TermsComponent {
     pageTitle: string = "Terms";
-    terms: string = '';
+    @Input() terms: string;
     termsError: boolean = false;
     termsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
+
+    @Output() getOpenAITermDefinitions = new EventEmitter();
 
     constructor(private clipboard: Clipboard, private http: HttpClient) {}
 
@@ -26,12 +29,11 @@ export class TermsComponent {
 
         console.log(`Process Terms: ${this.terms}`);
 
-        this.http.post('/api/Terms', { rawInput: this.terms}).subscribe(data => {
+        this.http.post('/api/Terms', { rawInput: this.terms}).subscribe((data: ITermsResponse) => {
             console.log(`POSTED Terms: ${this.terms}`);
-            console.log(`POSTED Terms Response: ${data}`);
+            console.log(`POSTED RESPONSE Term Definitions: ${data.openAIResponse}`);
 
-            // TODO:  Populate patent claim term definitions field
-            
+            this.getOpenAITermDefinitions.emit(data.openAIResponse);            
         })
 
     }
