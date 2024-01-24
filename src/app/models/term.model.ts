@@ -1,3 +1,3 @@
-export interface ITerm {
-    term: string;
-}
+// export interface ITerm {
+//     term: string;
+// }

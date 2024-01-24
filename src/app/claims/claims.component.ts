@@ -62,12 +62,13 @@ export class ClaimsComponent {
 
         // Provide an output to be provided to the next step
 
-        console.log(`Process Claims: ${this.claims}`);
-
         this.http.post('/api/Claims', { rawInput: this.claims}).subscribe((data: IClaimsResponse) => {
             console.log(`POSTED Claims: ${this.claims}`);
-            console.log(`POSTED RESPONSE Terms: ${data.openAIResponse.terms}`);
+            //console.log(`POSTED RESPONSE Terms: ${data.openAIResponse.terms}`);
 
+            console.log(`POSTED RESPONSE Open AI Response: ${data.openAIResponse}`);
+            console.log(`POSTED RESPONSE Terms: ${data.openAIResponse.terms}`);
+            
             this.getOpenAITerms.emit(data);
         });
 

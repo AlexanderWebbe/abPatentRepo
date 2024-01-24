@@ -38,7 +38,7 @@ import { IClaimsResponse } from './models/claimsResponse.model';
             `,
 })
 export class AppComponent implements OnInit {
-  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-23 3:08 PM]';
+  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-24 9:45 AM]';
   //TODO: Create a object that contains user claims, open ai/user terms and open ai/user term definitions.  This will allow me to push data between
   //  components and have a summary display screen
   // Parent to child binds on data
