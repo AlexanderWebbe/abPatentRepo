@@ -1,9 +1,5 @@
-//import { ITerms } from "./terms.model";
-
 export interface IClaimsResponse
 {
     rawInput: string;
-    openAIResponse: {
-        terms: [string]
-    };
+    openAIResponse: string;
 }

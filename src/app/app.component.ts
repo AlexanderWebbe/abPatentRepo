@@ -64,10 +64,13 @@ export class AppComponent implements OnInit {
   }
 
   addTermToDraft(claimsResponse: IClaimsResponse) {
-    console.log(`Add to Draft Object: ${claimsResponse.openAIResponse.terms}`);
+    console.log(`Add to Draft Object: ${claimsResponse.openAIResponse}`);
     this.draft.userClaims = claimsResponse.rawInput;
-    //this.draft.openAITerms = claimsResponse.openAIResponse.terms;
-    //this.draft.userTerms = claimsResponse.openAIResponse.terms;
+
+    let terms = JSON.parse(claimsResponse.openAIResponse);
+
+    this.draft.openAITerms = terms;
+    this.draft.userTerms = terms;
   }
 
   addTermDefinitionToDraft(openAITermDefinitions: string) {
