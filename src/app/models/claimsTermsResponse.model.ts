@@ -1,3 +1,3 @@
 export interface IClaimsTermsResponse {
-    terms: [string]
+    Terms: [string]
 }
