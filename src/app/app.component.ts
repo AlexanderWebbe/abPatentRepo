@@ -38,7 +38,7 @@ import { IClaimsResponse } from './models/claimsResponse.model';
             `,
 })
 export class AppComponent implements OnInit {
-  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-24 9:45 AM]';
+  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-24 2:18 AM]';
   //TODO: Create a object that contains user claims, open ai/user terms and open ai/user term definitions.  This will allow me to push data between
   //  components and have a summary display screen
   // Parent to child binds on data
@@ -67,10 +67,8 @@ export class AppComponent implements OnInit {
     console.log(`Add to Draft Object: ${claimsResponse.openAIResponse}`);
     this.draft.userClaims = claimsResponse.rawInput;
 
-    let terms = JSON.parse(claimsResponse.openAIResponse);
-
-    this.draft.openAITerms = terms;
-    this.draft.userTerms = terms;
+    this.draft.openAITerms = claimsResponse.openAIResponse.terms;
+    this.draft.userTerms = claimsResponse.openAIResponse.terms;
   }
 
   addTermDefinitionToDraft(openAITermDefinitions: string) {

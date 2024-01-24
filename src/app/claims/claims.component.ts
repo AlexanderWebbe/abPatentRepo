@@ -61,11 +61,8 @@ export class ClaimsComponent {
             console.log(`POSTED Claims: ${this.claims}`);
             console.log(`POSTED CLAIMS RESPONSE: ${data}`);
             console.log(`POSTED CLAIMS RESPONSE - Open AI Response: ${data.openAIResponse}`);
-
-            let terms = JSON.parse(data.openAIResponse);
-
-            console.log(`POSTED CLAIMS RESPONSE - Terms: ${terms}`);
-
+            console.log(`POSTED CLAIMS RESPONSE - Open AI Response.Terms: ${data.openAIResponse.terms}`);
+            
             // Provide an output to be provided to the next step
             this.getOpenAITerms.emit(data);
         });
