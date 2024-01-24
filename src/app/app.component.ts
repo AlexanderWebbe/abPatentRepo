@@ -20,25 +20,18 @@ import { IClaimsResponse } from './models/claimsResponse.model';
                 <mat-step label="Review your claim term definitions">
                   <ab-termDefinitions [termDefinitions]="draft.userTermDefinitions"></ab-termDefinitions>
                 </mat-step>
+                <mat-step label="Review your claim term definitions overview">
+                  <ab-overview></ab-overview>
+                </mat-step>
+                <mat-step label="Summary">
+                  <ab-summary [draft]="draft"></ab-summary>
+                </mat-step>
               </mat-stepper>
             </div>
-            <hr/>
-            User Claims:  {{draft.userClaims}}
-            <hr/>
-            Open AI Terms: # {{draft.openAITerms?.length}}
-            <li *ngFor="let term of draft.userTerms">
-              {{term}}
-            </li>
-            <hr/>
-            User Terms: {{draft.userTerms}}
-            <hr/>
-            Open AI Term Definitions: {{draft.openAITermDefinitions}}
-            <hr/>
-            User Term Definitions: {{draft.userTermDefinitions}}
             `,
 })
 export class AppComponent implements OnInit {
-  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-24 2:18 AM]';
+  pageTitle: string = 'Alston & Bird - Draft (Patent Draft Copilot) [Version: 2024-01-24]';
   //TODO: Create a object that contains user claims, open ai/user terms and open ai/user term definitions.  This will allow me to push data between
   //  components and have a summary display screen
   // Parent to child binds on data
@@ -49,12 +42,12 @@ export class AppComponent implements OnInit {
     this.draft = {
       user: 'Alex',
       date: '2024-01-22',
-      openAIOverview: 'Empty Open AI Overview',
-      openAITermDefinitions: 'Empty Open AI Term Definitions',
+      openAIOverview: '',
+      openAITermDefinitions: '',
       openAITerms: null,
       userClaims: '',
-      userOverview: 'Empty user overview',
-      userTermDefinitions: 'Empty user term definitions',
+      userOverview: '',
+      userTermDefinitions: '',
       userTerms: null
     }
   }

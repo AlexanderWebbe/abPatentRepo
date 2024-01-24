@@ -22,23 +22,21 @@ export class TermsComponent implements OnInit {
 
     ngOnInit(): void {
         //Initialize draft object
-        //this.terms = ['123','234','345'];
+        //this.terms = ['compliance violation instruction','temporary digital content object','permanent replacement digital content object','secondary digital content objects','deletion notification'];
     }
 
     processTerms() {
 
         // Validate Input
 
-        // Provide input to Cognative API
-
-        // Provide an output to be provided to the next step
-
         console.log(`Process Terms: ${this.terms}`);
 
+        // Provide input to Cognative API
         this.http.post('/api/Terms', { rawInput: this.terms}).subscribe((data: ITermsResponse) => {
             console.log(`POSTED Terms: ${this.terms}`);
             console.log(`POSTED RESPONSE Term Definitions: ${data.openAIResponse}`);
 
+            // Provide an output to be provided to the next step
             this.getOpenAITermDefinitions.emit(data.openAIResponse);            
         })
 

@@ -18,9 +18,11 @@ import { ClaimsComponent } from "./claims/claims.component";
 import { HistoryListComponent } from "./history/history-list.component";
 import { TermsComponent } from "./terms/terms.component";
 import { TermDefinitionsComponent } from "./termDefinitions/termDefinitions.component";
+import { OverviewComponent } from './overview/overview.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
-  declarations: [AppComponent, ActionsComponent, HistoryListComponent, ClaimsComponent, TermsComponent, TermDefinitionsComponent],
+  declarations: [AppComponent, ActionsComponent, HistoryListComponent, ClaimsComponent, TermsComponent, TermDefinitionsComponent, OverviewComponent, SummaryComponent],
   imports: [BrowserModule, BrowserAnimationsModule, ClipboardModule, FormsModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatStepperModule, MatTooltipModule ],  
   bootstrap: [AppComponent]
 })

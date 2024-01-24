@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+      Summary 
+    </div>
+  
+    User Claims:  {{draft.userClaims}}
+
+    <hr/>
+    User Terms:
+    <li *ngFor="let term of draft.userTerms">
+      {{term}}
+    </li>
+
+    <hr/>
+    
+    User Term Definitions: {{draft.userTermDefinitions}}
+  
+  </div>
