@@ -56,19 +56,13 @@ export class ClaimsComponent {
 
     processClaims() {
 
-        // Validate Input
-
         // Provide input to Cognative API
-
-        // Provide an output to be provided to the next step
-
         this.http.post('/api/Claims', { rawInput: this.claims}).subscribe((data: IClaimsResponse) => {
             console.log(`POSTED Claims: ${this.claims}`);
-            //console.log(`POSTED RESPONSE Terms: ${data.openAIResponse.terms}`);
+            console.log(`POSTED CLAIMS RESPONSE Open AI Response: ${data.openAIResponse}`);
+            console.log(`POSTED CLAIMS RESPONSE Terms: ${data.openAIResponse.terms}`);
 
-            console.log(`POSTED RESPONSE Open AI Response: ${data.openAIResponse}`);
-            console.log(`POSTED RESPONSE Terms: ${data.openAIResponse.terms}`);
-            
+            // Provide an output to be provided to the next step
             this.getOpenAITerms.emit(data);
         });
 
