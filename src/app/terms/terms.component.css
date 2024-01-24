@@ -24,3 +24,15 @@
     min-height: 350px;
     background-color: lightgray;
   }
+
+  table {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  table th {
+    text-align: center;
+  }
+
+  table tr {
+    border: 1px solid black;
+  }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
@@ -10,7 +10,7 @@ import { ITermsResponse } from "../models/termsResponse.model";
     styleUrls: ['./terms.component.css'],
     templateUrl: './terms.component.html'
 })
-export class TermsComponent {
+export class TermsComponent implements OnInit {
     pageTitle: string = "Terms";
     @Input() terms: Array<string>;
     termsError: boolean = false;
@@ -19,6 +19,11 @@ export class TermsComponent {
     @Output() getOpenAITermDefinitions = new EventEmitter();
 
     constructor(private clipboard: Clipboard, private http: HttpClient) {}
+
+    ngOnInit(): void {
+        //Initialize draft object
+        //this.terms = ['123','234','345'];
+    }
 
     processTerms() {
 
