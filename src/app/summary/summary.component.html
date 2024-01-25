@@ -7,16 +7,24 @@
     - Instructional text for the user explaining what is included in the summary
   </div>
 
-  User Claims: {{draft.userClaims}}
+  <h2>User Claims:</h2><br/>
+  {{draft.userClaims}}
 
   <hr />
-  User Terms:
+
+  <h2>User Terms:</h2><br/>
   <li *ngFor="let term of draft.userTerms">
     {{term}}
   </li>
 
   <hr />
 
-  User Term Definitions: {{draft.userTermDefinitions}}
+  <h2>Term Definitions:</h2><br/>
+  {{draft.userTermDefinitions}}
+
+  <hr />
+
+  <h2>User Overview:</h2><br/>
+  {{draft.userOverview}}
 
 </div>

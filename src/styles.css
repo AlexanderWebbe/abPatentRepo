@@ -23,5 +23,20 @@ body { margin-left: 10px; margin-right: 10px; font-family: Roboto, "Helvetica Ne
 
 .subHeader {
     padding-top: 7px !important;
-    font-size: medium!important;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important;
+    font-size: 16px !important;
+    color: #000000 !important;
+
 }
+
+.mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: #042149!important;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: #8bba38!important;
+}
+
+/* .mat-step-header .mat-step-icon {
+    background-color: #00abb2!important;
+} */
