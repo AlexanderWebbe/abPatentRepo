@@ -2,6 +2,11 @@
     <div class="card-header">
         {{pageTitle}}
     </div>
+    <div class="instructions">
+        Placeholder: <br/>
+        - Instructional text for the user explaining how to complete this specific step.<br/>
+        - I recommend explaining what a token is, what the token limit is and what happens if you go over the token limit.
+    </div>
 
     <!-- {{claims}} -->
     <!-- {{myClaims.value}} -->
@@ -30,11 +35,11 @@
         -->
 
         <div class="claim-full-width">
-            <label>Claims</label>
-            <textarea name="claims" #myClaims="ngModel" [(ngModel)] = "claims" matInput placeholder="Cut/Paste your claims here" required></textarea>
+            <!-- <label>Claims</label> -->
+            <textarea name="claims" #myClaims="ngModel" [(ngModel)]="claims" matInput placeholder="Cut/Paste your claims here" required></textarea>
             <em class="error" *ngIf="myClaims.invalid && myClaims.touched">Claims are required</em>
         </div>
-        
+
         <div class="row">
             <!--<div class="col-md-1">
                 <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()" (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
@@ -42,12 +47,12 @@
             <div class="col-md-11">
                 <button mat-button matStepperNext [disabled]="myClaimsForm.form.invalid" type="submit">Next</button>
             </div>
-        </div>  
+        </div>
 
         <div class="claimsError" *ngIf="claimsError">
             {{claimsErrorMessage}}
         </div>
-        
+
     </form>
 
 </div>

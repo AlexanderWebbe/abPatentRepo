@@ -12,7 +12,16 @@ div.card {
 .table {
     margin-top: 10px;
 }
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin-left: 10px; margin-right: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.header {
+    background-image: url("/assets/ABdraft_header_-rule.png");
+    background-repeat: repeat-x;
+}
+
+.subHeader {
+    padding-top: 7px !important;
+    font-size: medium!important;
+}

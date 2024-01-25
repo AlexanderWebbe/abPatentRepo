@@ -2,14 +2,22 @@
     <div class="card-header">
         {{pageTitle}}
     </div>
+    <div class="instructions">
+        Placeholder:<br/>
+        - Instructional text for the user explaining how to complete this specific step, including why a term
+        definition can not be removed and that only the term definition can be alterred.<br/>
+        - Note, calling Open AI is an asynchronous process and data will appear after you click "Next". In future versions I will add 
+        a progress spinner letting the end-user know something is happening.
+    </div>
 
     <!-- {{termDefinitions}} -->
 
     <form class="termDefinition-form" #myTermDefinitionsForm="ngForm" (ngSubmit)="processTermDefinitions()">
         <mat-form-field class="termDefintions-full-width">
-            <mat-label>Term Definitions</mat-label>
+            <!-- <mat-label>Term Definitions</mat-label> -->
             <textarea name="termDefinitions" #myTermDefinitions="ngModel" [(ngModel)]="termDefinitions" matInput placeholder="Review Term Definitions" required></textarea>
-            <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions are required</em>
+            <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions are
+                required</em>
         </mat-form-field>
 
         <div class="row">
@@ -18,9 +26,9 @@
             </div>
             <div class="col-md-11">
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext [disabled]="myTermDefinitionsForm.form.invalid" >Next</button>
+                <button mat-button matStepperNext [disabled]="myTermDefinitionsForm.form.invalid">Next</button>
             </div>
-        </div>  
+        </div>
 
         <div class="termDefinitionsError" *ngIf="termDefinitionsError">
             {{termDefinitionsErrorMessage}}

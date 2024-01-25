@@ -24,3 +24,7 @@
     min-height: 350px;
     background-color: lightgray;
   }
+
+  .instructions {
+    margin: 7px 7px 7px 7px;
+  }  

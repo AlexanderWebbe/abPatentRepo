@@ -2,15 +2,24 @@
     <div class="card-header">
         {{pageTitle}}
     </div>
+    <div class="instructions">
+        Placeholder: <br/>
+        - Instructional text for the user explaining how to complete this specific step, including how to
+        add, edit and delete terms.<br/> 
+        - Explain how terms where generated using Open AI
+        - By default, all terms are included. Uncheck the checkbox of the row where you would like to exclude a specific term.<br/>
+        - Note, calling Open AI is an asynchronous process and data will appear after you click "Next". In future versions I will add a 
+        progress spinner letting the end-user know something is happening.
+    </div>
 
     <!-- {{terms}} -->
 
     <form class="term-form" #myTermsForm="ngForm" (ngSubmit)="processTerms()">
-        
-            <!--<mat-label>Terms</mat-label>-->
-            <!--<textarea name="terms" matInput #myTerms="ngModel" [(ngModel)]="terms" [(ngModel)] = "terms" placeholder="Review Terms" required></textarea>-->
-            
-            <!--
+
+        <!--<mat-label>Terms</mat-label>-->
+        <!--<textarea name="terms" matInput #myTerms="ngModel" [(ngModel)]="terms" [(ngModel)] = "terms" placeholder="Review Terms" required></textarea>-->
+
+        <!--
             <ol type="1">
                 <ng-container *ngFor="let term of terms">
                     <li>
@@ -30,25 +39,26 @@
             </ol>
             -->
 
-            <table>
-                <thead>
-                    <th>Include</th>
-                    <th>Terms</th>
-                </thead>
-                <tbody *ngFor="let term of terms">
-                    <tr>
-                        <td><input type="checkbox" value="1" checked></td>
-                        <td class="terms"><input matInput placeholder="Ex. Term" value="{{term}}"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <table>
+            <thead>
+                <th>Include</th>
+                <th>Terms</th>
+            </thead>
+            <tbody *ngFor="let term of terms">
+                <tr>
+                    <td><input type="checkbox" value="1" checked></td>
+                    <td class="terms"><input matInput placeholder="Ex. Term" value="{{term}}"></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!--em class="error" *ngIf="myTerms.invalid && myTerms.touched">Terms are required</em>-->
-        
-        
+        <!--em class="error" *ngIf="myTerms.invalid && myTerms.touched">Terms are required</em>-->
+
+
         <div class="row">
             <div class="col-md-1">
-                <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()" (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
+                <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()"
+                    (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
             </div>
             <div class="col-md-11">
                 <button mat-button matStepperPrevious>Back</button>

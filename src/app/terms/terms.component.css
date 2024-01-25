@@ -37,3 +37,7 @@
     border: 1px solid black;
     width: 1600px;
   }
+
+  .instructions {
+    margin: 7px 7px 7px 7px;
+  }

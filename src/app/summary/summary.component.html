@@ -1,18 +1,22 @@
 <div class="card">
-    <div class="card-header">
-      Summary 
-    </div>
-  
-    User Claims:  {{draft.userClaims}}
-
-    <hr/>
-    User Terms:
-    <li *ngFor="let term of draft.userTerms">
-      {{term}}
-    </li>
-
-    <hr/>
-    
-    User Term Definitions: {{draft.userTermDefinitions}}
-  
+  <div class="card-header">
+    Summary
   </div>
+  <div class="instructions">
+    Placeholder:<br/>
+    - Instructional text for the user explaining what is included in the summary
+  </div>
+
+  User Claims: {{draft.userClaims}}
+
+  <hr />
+  User Terms:
+  <li *ngFor="let term of draft.userTerms">
+    {{term}}
+  </li>
+
+  <hr />
+
+  User Term Definitions: {{draft.userTermDefinitions}}
+
+</div>

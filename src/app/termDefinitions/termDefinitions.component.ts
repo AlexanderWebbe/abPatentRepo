@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
+import { IOverviewResponse } from "../models/overviewResponse.model";
 
 @Component({
     selector: 'ab-termDefinitions',
@@ -14,23 +15,22 @@ export class TermDefinitionsComponent {
     termDefinitionsError: boolean = false;
     termDefinitionsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 
+    @Output() getOpenAIOverview = new EventEmitter();
+
     constructor(private clipboard: Clipboard, private http: HttpClient) {}
 
     processTermDefinitions() {
-
-        // Validate Input
-
+        
         // Provide input to Cognative API
+        this.http.post('/api/TermDefintions', { rawInput: this.termDefinitions}).subscribe((data: IOverviewResponse) => {
 
-        // Provide an output to be provided to the next step
-        console.log(`Process Term Definitions: ${this.termDefinitions}`);
-
-        this.http.post('/api/TermDefintions', { rawInput: this.termDefinitions}).subscribe(data => {
+            // Provide an output to be provided to the next step
             console.log(`POSTED Term Definitions: ${this.termDefinitions}`);
-            console.log(`POSTED Term Definitions Response: ${data}`);
+            console.log(`POSTED RESPONSE Overview: ${data.openAIResponse}`);
 
-            // TODO:  Populate patent claim term definitions field
-            
+            // Populate patent claim term definitions field
+            //this.getOpenAITermDefinitions.emit(data.openAIResponse);         
+            this.getOpenAIOverview.emit(data.openAIResponse)
         })
 
     }

@@ -1,7 +1,37 @@
 <div class="card">
-    <div class="card-header">
-      Overview 
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="instructions">
+    Placeholder:<br/>
+    - Instructional text for the user explaining how to complete this specific step<br/>
+    - Note, calling Open AI is an asynchronous process and data will appear after you click "Next". In future versions I will add 
+      a progress spinner letting the end-user know something is happening.
+  </div>
+
+  {{overview}}
+
+  <form class="overview-form" #myOverviewForm="ngForm" (ngSubmit)="processOverview()">
+    <mat-form-field class="overview-full-width">
+        <!-- <mat-label>Overview</mat-label> -->
+        <textarea name="overview" #myOverview="ngModel" [(ngModel)]="overview" matInput placeholder="Review Overview" required></textarea>
+        <em class="error" *ngIf="myOverview.invalid && myOverview.touched">Overview is required</em>
+    </mat-form-field>
+
+    <div class="row">
+        <div class="col-md-1">
+            <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()" (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
+        </div>
+        <div class="col-md-11">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext [disabled]="myOverviewForm.form.invalid">Next</button>
+        </div>
     </div>
-  
-    
+
+    <div class="termDefinitionsError" *ngIf="overViewError">
+        {{overViewErrorMessage}}
+    </div>
+
+</form>
+
 </div>
