@@ -22,7 +22,7 @@ export class TermDefinitionsComponent {
     processTermDefinitions() {
         
         // Provide input to Cognative API
-        this.http.post('/api/TermDefintions', { rawInput: this.termDefinitions}).subscribe((data: IOverviewResponse) => {
+        this.http.post('/api/TermDefinitions', { rawInput: this.termDefinitions}).subscribe((data: IOverviewResponse) => {
 
             // Provide an output to be provided to the next step
             console.log(`POSTED Term Definitions: ${this.termDefinitions}`);
