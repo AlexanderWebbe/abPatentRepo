@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IDraft } from './models/draft.model';
 import { IClaimsResponse } from './models/claimsResponse.model';
 import { ITermsResponse } from './models/termsResponse.model';
+import { IOverviewResponse } from './models/overviewResponse.model';
 
 @Component({
   selector: 'app-root',
@@ -81,10 +82,10 @@ export class AppComponent implements OnInit {
     this.draft.userTermDefinitions = termsReponse.OpenAIResponse.TermDefinitions;
   }
 
-  addOverviewToDraft(openAIOverview: string) {
-    console.log(`Add to Draft Object: ${openAIOverview}`);
-    this.draft.openAIOverview = openAIOverview;
-    this.draft.userOverview = openAIOverview;
+  addOverviewToDraft(overviewResponse: IOverviewResponse) {
+    console.log(`Add to Draft Object: ${JSON.stringify(overviewResponse)}`);
+    this.draft.openAIOverview = overviewResponse.openAIResponse;
+    this.draft.userOverview = overviewResponse.openAIResponse;
   }
 
 }

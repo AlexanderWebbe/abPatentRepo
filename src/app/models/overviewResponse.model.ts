@@ -1,5 +1,7 @@
+import { TermDefinitionResponse } from "./termsDefinitionResponse.model";
+
 export interface IOverviewResponse
 {
-    rawInput: string;
+    rawInput: TermDefinitionResponse[];
     openAIResponse: string;
 }

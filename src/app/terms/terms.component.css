@@ -28,10 +28,16 @@
   table {
     margin-left: 10px;
     margin-right: 10px;
-    width: 100%;
+    width: 98%;
   }
+
   table th {
     text-align: center;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #402998;
+    color: #fff;
   }
 
   .include {
@@ -41,10 +47,12 @@
 
   .term {
     border: 1px solid black;
-    min-width: fit-content;
+    width: fit-content;
   }
 
 
   .instructions {
     margin: 7px 7px 7px 7px;
+    font-size:1.0em;
+    color:gray;
   }

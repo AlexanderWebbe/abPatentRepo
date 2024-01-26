@@ -34,4 +34,6 @@
 
   .instructions {
     margin: 7px 7px 7px 7px;
+    font-size:1.0em;
+    color:gray;
   }

@@ -3,12 +3,15 @@
         {{pageTitle}}
     </div>
     <div class="instructions">
-        Placeholder:<br/>
-        - Instructional text for the user explaining how to complete this specific step, including why a term
+        <u>Placeholder:</u><br/>
+        - Provide instructional text guiding the user on how to complete this specific step, including why a term
         definition can not be removed and that only the term definition can be alterred.<br/>
+        - I recommend explaining what a token is, defining the token limit, and outlining the consequences of exceeding that limit.<br/>
+        <u>Development Tasks:</u><br/>
         - Note, calling Open AI is an asynchronous process and data will appear after you click "Next". In future versions I will add 
         a progress spinner letting the end-user know something is happening.<br/>
-        - I recommend explaining what a token is, what the token limit is and what happens if you go over the token limit.
+        - Modifying term definitions is currently not being saved and passed to the next step.<br/>
+        - Modifying terms is currently not validating.<br/>
     </div>
 
     <!-- {{termDefinitions}} -->

@@ -3,14 +3,17 @@
         {{pageTitle}}
     </div>
     <div class="instructions">
-        Placeholder: <br/>
-        - Instructional text for the user explaining how to complete this specific step, including how to
+        <u>Placeholder:</u><br/>
+        - Provide instructional text guiding the user on how to complete this specific step, including how to
         add, edit and delete terms.<br/> 
         - Explain how terms where generated using Open AI
         - By default, all terms are included. Uncheck the checkbox of the row where you would like to exclude a specific term.<br/>
+        - I recommend explaining what a token is, defining the token limit, and outlining the consequences of exceeding that limit.<br/>
+        <u>Development Tasks:</u><br/>
         - Note, calling Open AI is an asynchronous process and data will appear after you click "Next". In future versions I will add a 
         progress spinner letting the end-user know something is happening.<br/>
-        - I recommend explaining what a token is, what the token limit is and what happens if you go over the token limit.
+        - Modifying terms is currently not being saved and passed to the next step.<br/>
+        - Modifying terms is currently not validating.<br/>
     </div>
 
     <!-- {{terms}} -->
@@ -19,26 +22,6 @@
 
         <!--<mat-label>Terms</mat-label>-->
         <!--<textarea name="terms" matInput #myTerms="ngModel" [(ngModel)]="terms" [(ngModel)] = "terms" placeholder="Review Terms" required></textarea>-->
-
-        <!--
-            <ol type="1">
-                <ng-container *ngFor="let term of terms">
-                    <li>
-                        <mat-form-field class="terms-full-width">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <input type="checkbox" value="1">
-                                    <label> Keep</label>
-                                </div>
-                                <div class="col-md-11">
-                                    <input matInput placeholder="Ex. Term" value="{{term}}">
-                                </div>
-                            </div>
-                        </mat-form-field>
-                    </li>
-                </ng-container>
-            </ol>
-            -->
 
         <table>
             <thead>
@@ -55,11 +38,9 @@
 
         <!--em class="error" *ngIf="myTerms.invalid && myTerms.touched">Terms are required</em>-->
 
-
         <div class="row">
             <div class="col-md-1">
-                <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()"
-                    (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
+                <ab-actions (previousDraft)="previousDraftOnClick()" (nextDraft)="nextDraftOnClick()" (copyDraft)="copyDraftOnClick()" (refreshDraft)="refreshDraftOnClick()"></ab-actions>
             </div>
             <div class="col-md-11">
                 <button mat-button matStepperPrevious>Back</button>
