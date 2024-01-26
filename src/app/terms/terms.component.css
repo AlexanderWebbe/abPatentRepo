@@ -28,15 +28,22 @@
   table {
     margin-left: 10px;
     margin-right: 10px;
+    width: 100%;
   }
   table th {
     text-align: center;
   }
 
-  .terms {
-    border: 1px solid black;
-    width: 1600px;
+  .include {
+    width: 50px;
+    text-align: center;
   }
+
+  .term {
+    border: 1px solid black;
+    min-width: fit-content;
+  }
+
 
   .instructions {
     margin: 7px 7px 7px 7px;

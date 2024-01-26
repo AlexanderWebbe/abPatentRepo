@@ -1,43 +1,47 @@
 .termDefintions-full-width {
   width: 100%;
-} 
+}
 
 .termDefinitionsError {
-    margin: 25px 0;
-    color: red;
-    font-size: 18px;
-    text-align: center;
-  }
+  margin: 25px 0;
+  color: red;
+  font-size: 18px;
+  text-align: center;
+}
 
-  em.error {
-    padding: 2px 5px;
-    background-color: #c2185b;
-    color: white;
-    font-style: normal;
-  }
+em.error {
+  padding: 2px 5px;
+  background-color: #c2185b;
+  color: white;
+  font-style: normal;
+}
 
-  button{
-    margin: 10px 5px;;    
-  }
+button {
+  margin: 10px 5px;
+  ;
+}
 
-  .instructions {
-    margin: 7px 7px 7px 7px;
-  }  
+.instructions {
+  margin: 7px 7px 7px 7px;
+}
 
-  table {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+table {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+}
 
-  table th {
-    text-align: center;
-  }
+table th {
+  text-align: center;
+}
 
-  .term {
-    width: 300px;
-  }
+.term {
+  white-space: nowrap;
+  width: 300px;
+}
 
-  .termDefinition {
-    border: 1px solid black;
-    width: 1300px;
-  }
+.termDefinition {
+  border: 1px solid black;
+  width: fit-content;
+  word-wrap: break-word;
+}
