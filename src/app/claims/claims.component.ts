@@ -57,7 +57,7 @@ export class ClaimsComponent {
     processClaims() {
 
         // Provide input to Cognative API
-        this.http.post('/api/Claims', { rawInput: this.claims}).subscribe((data: IClaimsResponse) => {
+        this.http.post('/api/Claims', { RawInput: this.claims}).subscribe((data: IClaimsResponse) => {
             console.log(`POSTED Claims: ${this.claims}`);
             console.log(`POSTED CLAIMS RESPONSE: ${JSON.stringify(data)}`);
             

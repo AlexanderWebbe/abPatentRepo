@@ -38,7 +38,7 @@ export class TermDefinitionsComponent implements OnInit {
 
             // Provide an output to be provided to the next step
             console.log(`POSTED Term Definitions: ${this.termDefinitions}`);
-            console.log(`POSTED RESPONSE Overview: ${data.openAIResponse}`);
+            console.log(`POSTED RESPONSE Overview: ${data.OpenAIResponse}`);
 
             // Populate patent claim term definitions field
             //this.getOpenAITermDefinitions.emit(data.openAIResponse);         
