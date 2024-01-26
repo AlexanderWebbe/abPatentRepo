@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
@@ -10,7 +10,7 @@ import { TermDefinitionResponse } from "../models/termsDefinitionResponse.model"
     styleUrls: ['./termDefinitions.component.css'],
     templateUrl: './termDefinitions.component.html'
 })
-export class TermDefinitionsComponent {
+export class TermDefinitionsComponent implements OnInit {
     pageTitle: string = "Term Definitions";
     @Input() termDefinitions: TermDefinitionResponse[];
     termDefinitionsError: boolean = false;
@@ -19,6 +19,17 @@ export class TermDefinitionsComponent {
     @Output() getOpenAIOverview = new EventEmitter();
 
     constructor(private clipboard: Clipboard, private http: HttpClient) {}
+
+    ngOnInit(): void {
+        //Initialize draft object
+        this.termDefinitions = [
+            { Term: 'associate', Definition: 'The term "associate" refers to the act of connecting or linking two or more items or entities together, often based on a specific relationship or criteria.' },
+            { Term: 'author', Definition: 'In the context of software engineering, an "author" refers to the individual or entity responsible for creating or developing a piece of software code or program.' },
+            { Term: 'automatic', Definition: '"Automatic" describes a process or action that is performed without human intervention, typically through the use of automation or algorithms.' },
+            { Term: 'channels', Definition: '"Channels" in software engineering refer to the means or pathways through which data or information is transmitted or communicated between different components or systems.' },
+            { Term: 'compliance non-violation instruction', Definition: 'A "compliance non-violation instruction" is a directive or set of guidelines aimed at ensuring that certain rules or regulations are followed and that no violations occur within a software system or application.' }
+        ];
+    }
 
     processTermDefinitions() {
         

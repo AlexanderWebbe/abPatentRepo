@@ -25,9 +25,9 @@
                 <th>Term</th>
                 <th>Definition</th>
             </thead>
-            <tbody *ngFor="let termDefinition of termDefinitions">
-                <tr>
-                    <td class="term"><input matInput placeholder="Ex. Term" value="{{termDefinition.Term}}"></td>
+            <tbody>
+                <tr *ngFor="let termDefinition of termDefinitions">
+                    <td class="term"><mat-label>{{termDefinition.Term}}</mat-label>
                     <td class="termDefinition"><input matInput placeholder="Ex. Term Definition" value="{{termDefinition.Definition}}"></td>
                 </tr>
             </tbody>

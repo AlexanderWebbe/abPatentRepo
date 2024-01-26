@@ -20,11 +20,24 @@
     margin: 10px 5px;;    
   }
 
-  textarea.mat-input-element {
-    min-height: 350px;
-    background-color: lightgray;
-  }
-
   .instructions {
     margin: 7px 7px 7px 7px;
   }  
+
+  table {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  table th {
+    text-align: center;
+  }
+
+  .term {
+    width: 300px;
+  }
+
+  .termDefinition {
+    border: 1px solid black;
+    width: 1300px;
+  }
