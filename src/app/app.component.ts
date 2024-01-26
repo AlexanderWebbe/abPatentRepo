@@ -68,17 +68,17 @@ export class AppComponent implements OnInit {
   }
 
   addTermToDraft(claimsResponse: IClaimsResponse) {
-    console.log(`Add to Draft Object: ${JSON.stringify(claimsResponse.openAIResponse)}`);
-    this.draft.userClaims = claimsResponse.rawInput;
+    console.log(`Add to Draft Object: ${JSON.stringify(claimsResponse.OpenAIResponse)}`);
+    this.draft.userClaims = claimsResponse.RawInput;
 
-    this.draft.openAITerms = claimsResponse.openAIResponse.Terms;
-    this.draft.userTerms = claimsResponse.openAIResponse.Terms;
+    this.draft.openAITerms = claimsResponse.OpenAIResponse.Terms;
+    this.draft.userTerms = claimsResponse.OpenAIResponse.Terms;
   }
 
   addTermDefinitionToDraft(termsReponse: ITermsResponse) {
-    console.log(`Add to Draft Object: ${JSON.stringify(termsReponse.openAIResponse)}`);
-    this.draft.openAITermDefinitions = termsReponse.openAIResponse.TermDefinitions;
-    this.draft.userTermDefinitions = termsReponse.openAIResponse.TermDefinitions;
+    console.log(`Add to Draft Object: ${JSON.stringify(termsReponse.OpenAIResponse)}`);
+    this.draft.openAITermDefinitions = termsReponse.OpenAIResponse.TermDefinitions;
+    this.draft.userTermDefinitions = termsReponse.OpenAIResponse.TermDefinitions;
   }
 
   addOverviewToDraft(openAIOverview: string) {

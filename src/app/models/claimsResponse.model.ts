@@ -2,6 +2,6 @@ import { IClaimsTermsResponse } from "./claimsTermsResponse.model";
 
 export interface IClaimsResponse
 {
-    rawInput: string;
-    openAIResponse: IClaimsTermsResponse;
+    RawInput: string;
+    OpenAIResponse: IClaimsTermsResponse;
 }
