@@ -1,5 +1,6 @@
-export interface ITermsResponse
-{
+import { TermsOpenAIResponse } from "./termsOpenAIResponse.model";
+
+export interface ITermsResponse {
     rawInput: string;
-    openAIResponse: string;
+    openAIResponse: TermsOpenAIResponse;
 }

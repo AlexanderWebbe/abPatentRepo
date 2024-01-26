@@ -3,6 +3,7 @@ import {Clipboard} from '@angular/cdk/clipboard';
 import { HttpClient } from "@angular/common/http";
 import { throwError } from "rxjs";
 import { IOverviewResponse } from "../models/overviewResponse.model";
+import { TermDefinitionResponse } from "../models/termsDefinitionResponse.model";
 
 @Component({
     selector: 'ab-termDefinitions',
@@ -11,7 +12,7 @@ import { IOverviewResponse } from "../models/overviewResponse.model";
 })
 export class TermDefinitionsComponent {
     pageTitle: string = "Term Definitions";
-    @Input() termDefinitions;
+    @Input() termDefinitions: TermDefinitionResponse[];
     termDefinitionsError: boolean = false;
     termDefinitionsErrorMessage: string = 'Placeholder for general errors raised from the REST API';
 
@@ -51,7 +52,8 @@ export class TermDefinitionsComponent {
         // Copying large amounts of data can take time and requires async method
         // this.clipboard.copy(this.termDefinitions);
 
-        const pending = this.clipboard.beginCopy(this.termDefinitions);
+        //const pending = this.clipboard.beginCopy(this.termDefinitions[0]);
+        const pending = this.clipboard.beginCopy('');
         let remainingAttempts = 3;
         const attempt = () => {
             const result = pending.copy();

@@ -14,12 +14,24 @@
     <!-- {{termDefinitions}} -->
 
     <form class="termDefinition-form" #myTermDefinitionsForm="ngForm" (ngSubmit)="processTermDefinitions()">
-        <mat-form-field class="termDefintions-full-width">
+        <!-- <mat-form-field class="termDefintions-full-width"> -->
             <!-- <mat-label>Term Definitions</mat-label> -->
-            <textarea name="termDefinitions" #myTermDefinitions="ngModel" [(ngModel)]="termDefinitions" matInput placeholder="Review Term Definitions" required></textarea>
-            <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions are
-                required</em>
-        </mat-form-field>
+            <!-- <textarea name="termDefinitions" #myTermDefinitions="ngModel" [(ngModel)]="termDefinitions" matInput placeholder="Review Term Definitions" required></textarea> -->
+            <!-- <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions are required</em> -->
+        <!-- </mat-form-field> -->
+
+        <table>
+            <thead>
+                <th>Term</th>
+                <th>Definition</th>
+            </thead>
+            <tbody *ngFor="let termDefinition of termDefinitions">
+                <tr>
+                    <td class="term"><input matInput placeholder="Ex. Term" value="{{termDefinition.Term}}"></td>
+                    <td class="termDefinition"><input matInput placeholder="Ex. Term Definition" value="{{termDefinition.Definition}}"></td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="row">
             <div class="col-md-1">

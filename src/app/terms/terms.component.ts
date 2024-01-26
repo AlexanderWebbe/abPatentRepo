@@ -34,10 +34,10 @@ export class TermsComponent implements OnInit {
         // Provide input to Cognative API
         this.http.post('/api/Terms', { rawInput: this.terms}).subscribe((data: ITermsResponse) => {
             console.log(`POSTED Terms: ${this.terms}`);
-            console.log(`POSTED RESPONSE Term Definitions: ${data.openAIResponse}`);
+            console.log(`POSTED Terms RESPONSE: ${JSON.stringify(data)}`);
 
             // Provide an output to be provided to the next step
-            this.getOpenAITermDefinitions.emit(data.openAIResponse);            
+            this.getOpenAITermDefinitions.emit(data);            
         })
 
     }
