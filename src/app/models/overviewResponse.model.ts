@@ -3,5 +3,10 @@ import { TermDefinitionResponse } from "./termsDefinitionResponse.model";
 export interface IOverviewResponse
 {
     RawInput: TermDefinitionResponse[];
-    OpenAIResponse: string;
+    OpenAIResponse: IOpenAIOverviewResponse;
+}
+
+export interface IOpenAIOverviewResponse
+{
+    Overview: string;
 }
