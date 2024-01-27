@@ -20,7 +20,9 @@
   <hr />
 
   <h2>Term Definitions:</h2><br/>
-  {{draft.userTermDefinitions}}
+  <li *ngFor="let termDefinition of draft.userTermDefinitions">
+    {{termDefinition.Term}}: {{termDefinition.Definition}}
+  </li>
 
   <hr />
 
