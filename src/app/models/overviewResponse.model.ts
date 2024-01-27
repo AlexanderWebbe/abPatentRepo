@@ -8,5 +8,5 @@ export interface IOverviewResponse
 
 export interface IOpenAIOverviewResponse
 {
-    Summary: string;
+    summary: string;
 }
