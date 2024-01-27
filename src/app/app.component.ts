@@ -84,8 +84,8 @@ export class AppComponent implements OnInit {
 
   addOverviewToDraft(overviewResponse: IOverviewResponse) {
     console.log(`Add to Draft Object: ${JSON.stringify(overviewResponse)}`);
-    this.draft.openAIOverview = overviewResponse.OpenAIResponse.Overview;
-    this.draft.userOverview = overviewResponse.OpenAIResponse.Overview;
+    this.draft.openAIOverview = overviewResponse.OpenAIResponse.Summary;
+    this.draft.userOverview = overviewResponse.OpenAIResponse.Summary;
   }
 
 }
