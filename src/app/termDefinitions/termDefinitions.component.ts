@@ -37,8 +37,8 @@ export class TermDefinitionsComponent implements OnInit {
         this.http.post('/api/TermDefinitions', { rawInput: this.termDefinitions}).subscribe((data: IOverviewResponse) => {
 
             // Provide an output to be provided to the next step
-            console.log(`POSTED Term Definitions: ${this.termDefinitions}`);
-            console.log(`POSTED RESPONSE Overview: ${data.OpenAIResponse}`);
+            console.log(`POSTED Term Definitions: ${JSON.stringify(this.termDefinitions)}`);
+            console.log(`POSTED RESPONSE Overview: ${JSON.stringify(data)}`);
 
             // Populate patent claim term definitions field
             //this.getOpenAITermDefinitions.emit(data.openAIResponse);         

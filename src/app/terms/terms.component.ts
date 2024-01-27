@@ -29,8 +29,6 @@ export class TermsComponent implements OnInit {
 
         // Validate Input
 
-        console.log(`Process Terms: ${this.terms}`);
-
         // Provide input to Cognative API
         this.http.post('/api/Terms', { rawInput: this.terms}).subscribe((data: ITermsResponse) => {
             console.log(`POSTED Terms: ${this.terms}`);
