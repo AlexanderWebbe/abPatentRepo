@@ -1,12 +1,9 @@
+//import { IOverviewSummaryResponse } from "./overviewSummaryResponse.model";
 import { TermDefinitionResponse } from "./termsDefinitionResponse.model";
 
 export interface IOverviewResponse
 {
     RawInput: TermDefinitionResponse[];
-    OpenAIResponse: IOpenAIOverviewResponse;
-}
-
-export interface IOpenAIOverviewResponse
-{
-    Summary: string;
+    //OpenAIResponse: IOverviewSummaryResponse;
+    OpenAIResponse: string;
 }
