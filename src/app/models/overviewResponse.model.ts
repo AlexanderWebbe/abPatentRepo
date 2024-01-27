@@ -5,5 +5,5 @@ export interface IOverviewResponse
 {
     RawInput: TermDefinitionResponse[];
     //OpenAIResponse: IOverviewSummaryResponse;
-    OpenAIResponse: string;
+    openAIResponse: string;
 }
